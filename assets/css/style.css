@@ -145,6 +145,7 @@ section.cta > .cta_btn:hover {
     width: 100%;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     position: relative;
     align-items: center;
     flex-direction: column;
@@ -163,28 +164,47 @@ section.cta > .cta_btn:hover {
     border-radius: 5px;
     padding: 2em !important;
     background-color: rgba(37, 17, 17, 0.411);
+    box-shadow: -1px 4px 15px 0px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: -1px 4px 15px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: -1px 4px 15px 0px rgba(0,0,0,0.6);
 }
 
 #form_block .inputs {
     padding: 1em 0 !important;
 }
 
-#form_block .form input {
+#form_block .form input,
+#form_block .form select {
+    height: 41px;
     font-size: 1.4rem;
     border-radius: 5px;
+    padding-left: .8em !important;
     margin-bottom: 1em !important;
-    padding: .4em 1em .8em  !important;
     border-left: 4px solid #FFD8B1;
+}
+
+#form_block .form select {
+    line-height: 3 !important;
+    color: #212529b4 !important;
 }
 
 #form_block .form input:last-child {
     margin-bottom: 0 !important;
 }
 
+#form_block .form input::placeholder,
+#form_block .form select {
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
 #form_block .btn {
     border-radius: 5px;
-    padding: 1em 4.3em !important;
+    height: 43px;
+    width: 150px;
+    font-size: 1.4rem;
 }
+
 
 
 /* TABLE SECTION  */
@@ -201,7 +221,8 @@ section.cta > .cta_btn:hover {
     border-collapse: collapse;
 }
 
-#table_block .table, 
+#table_block .table,
+#table_block tr, 
 #table_block th, 
 #table_block td {
     border: none;
@@ -210,6 +231,19 @@ section.cta > .cta_btn:hover {
 #table_block th, 
 #table_block td {
     height: 50px;
+    position: relative;
+}
+
+#table_block tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+#table_block .tab_span {
+    position: absolute;
+    right: 5px;
+    color: red;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 
@@ -261,8 +295,10 @@ footer p {
         width: 80%;
     }
 
-    #form_block .btn {
-        padding: 1em 5em !important;
+
+    /* TABLE BLOCK */
+    #table_block .tab_span {
+        right: 10px;
     }
 }
 
@@ -289,6 +325,10 @@ footer p {
     #table_block th, 
     #table_block td {
         height: 55px;
+    }
+
+    #table_block .tab_span {
+        right: 10px;
     }
 }
 
@@ -400,22 +440,27 @@ footer p {
     }
 
     #form_block > .form {
-        width: 65%;
+        width: 55%;
         border-radius: 5px;
         padding: 2em 3em !important;
         background-color: rgba(0, 0, 0, 0.411);
     }
 
-    #form_block .form input {
+    #form_block .form input,
+    #form_block .form select {
         font-size: 1.6rem;
-        margin-bottom: 1.7em !important;
-        padding: .55em 1em .8em  !important;
+        height: 50px;
+        margin-bottom: 1.2em !important;
         border-left: 4px solid #FFD8B1;
     }
 
+    #form_block .form input::placeholder,
     #form_block .btn {
         font-size: 1.6rem;
-        padding: .7em 3em !important;
+    }
+
+    #form_block .btn {
+        height: 50px;
     }
 
 
@@ -428,6 +473,11 @@ footer p {
     #table_block th, 
     #table_block td {
         height: 55px;
+    }
+
+    #table_block .tab_span {
+        top: 15px;
+        right: 30px;
     }
 }
 
@@ -537,22 +587,26 @@ footer p {
     }
 
     #form_block > .form {
-        width: 42%;
+        width: 35%;
         border-radius: 5px;
         padding: 2.5em 4em !important;
-        background-color: rgba(0, 0, 0, 0.541);
+        background-color: rgba(0, 0, 0, 0.411);
     }
 
-    #form_block .form input {
+    #form_block .form input,
+    #form_block .form select  {
         font-size: 1.6rem;
-        margin-bottom: 1.7em !important;
-        padding: .4em .8em .4em 1em !important;
+        margin-bottom: 1.2em !important;
         border-left: 4px solid #FFD8B1;
     }
 
+    #form_block .form input::placeholder,
     #form_block .btn {
         font-size: 1.6rem;
-        padding: .5em 3em !important;
+    }
+
+    #form_block .btn {
+        height: 50px;
     }
 
 
@@ -566,5 +620,10 @@ footer p {
     #table_block th, 
     #table_block td {
         height: 70px;
+    }
+
+    #table_block .tab_span {
+        top: 23px;
+        right: 50px;
     }
 }
