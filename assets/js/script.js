@@ -40,6 +40,8 @@ function saveData(e) {
         userID++;
     
         form.reset();
+
+        alert("Welcome! Registration completed.");
     
         return updateTable();
     }
@@ -72,31 +74,35 @@ function updateTable() {
 // Clears the entire table row from the localStorage, the re-renders the table
 function removeUser(e) {
     if(e.target.classList.contains('tab_span')) {
-        let data = JSON.parse(localStorage.getItem("users"));
 
-        let tr = e.target.parentNode.parentNode.id;
+        let response = confirm("Mean to delete member from list?");
 
-        data.forEach((obj, index) => {
-            if(obj.userID === (+tr)) {
-                data.splice(index, 1);
+        if(response) {
+            let data = JSON.parse(localStorage.getItem("users"));
+
+            let tr = e.target.parentNode.parentNode.id;
+
+            data.forEach((obj, index) => {
+                if(obj.userID === (+tr)) {
+                    data.splice(index, 1);
+                }
+            })
+
+            if(data.length === 0) {
+                localStorage.removeItem("users");
+            
+                form_block.style.display = "none";
+
+                return ( userID = 1, usersArr = [] );
+            } else {
+                usersArr = [...data];
+
+                localStorage.setItem("users", JSON.stringify(data));
+
+                return updateTable();
             }
-        })
-
-        if(data.length === 0) {
-            localStorage.removeItem("users");
-        
-            form_block.style.display = "none";
-
-            return ( userID = 1, usersArr = [] );
-        } else {
-            usersArr = [...data];
-
-            localStorage.setItem("users", JSON.stringify(data));
-
-            return updateTable();
-        }
+        }   
     }
-    
 }
 
 
