@@ -139,7 +139,7 @@ section.cta > .cta_btn:hover {
 }
 
 
-/* FORM SECTION  */
+/* FORM SECTION */
 
 #form_block {
     width: 100%;
@@ -211,7 +211,7 @@ section.cta > .cta_btn:hover {
 #table_block {
     width: 100vw;
     height: 100vh;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     background-color: rgb(191, 214, 209);

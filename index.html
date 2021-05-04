@@ -41,7 +41,7 @@
         <section id="form_block" class="row">
             <h2>Our friends await you</h2>
 
-            <form class="form col-sm-10 col-md-8">
+            <form class="form col-sm-10 col-md-8" id="form" onsubmit=saveData()>
                 <div class="inputs mb-3">
                     <input type="text" class="form-control firstname" placeholder="Firstname">
 
@@ -49,7 +49,7 @@
 
                     <input type="number" class="form-control age" placeholder="Age">
 
-                    <select class="form-select form-select-lg" aria-label=".form-select-lg">
+                    <select class="form-select form-select-lg level" aria-label=".form-select-lg">
                         <option selected>Your level</option>
                         <option value="100">100 level</option>
                         <option value="200">200 level</option>
@@ -80,39 +80,7 @@
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
-                        <td>Kareem</td>
-                        <td>Rashid</td>
-                        <td>27</td>
-                        <td>400</td>
-                        <td>Liverpool <span class="tab_span">x</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Kareem</td>
-                        <td>Rashid</td>
-                        <td>27</td>
-                        <td>400</td>
-                        <td>Liverpool <span class="tab_span">x</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Kareem</td>
-                        <td>Rashid</td>
-                        <td>27</td>
-                        <td>400</td>
-                        <td>Liverpool <span class="tab_span">x</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Kareem</td>
-                        <td>Rashid</td>
-                        <td>27</td>
-                        <td>400</td>
-                        <td>Liverpool <span class="tab_span">x</span></td>
-                    </tr>
-                </tbody>
+                <tbody class="table_body"></tbody>
             </table>
         </section>
 
